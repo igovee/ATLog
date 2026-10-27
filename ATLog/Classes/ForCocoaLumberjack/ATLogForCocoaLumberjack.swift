@@ -24,9 +24,9 @@ public class ATLogForCocoaLumberjack: NSObject {
     public func startup() {
         logLevel = ATLog.level
         
-        DDLog.add(ATLogger())
-        
         #if DEBUG || PDA || PRE || ADHOC
+        
+        DDLog.add(ATLogger())
         
         fileLogger.rollingFrequency = 60 * 60 * 24 // 24 hours
         fileLogger.logFileManager.maximumNumberOfLogFiles = 30  //最大文件数
