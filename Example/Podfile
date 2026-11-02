@@ -1,0 +1,15 @@
+platform :ios, '15.0'
+use_frameworks! :linkage => :static
+inhibit_all_warnings!
+install! 'cocoapods',
+  :warn_for_unused_master_specs_repo => false,
+  :deterministic_uuids => false
+
+target 'ATLog_Example' do
+  pod 'ATLog', :path => '../'
+  pod 'ATLog/ForCocoaLumberjack', :path => '../'
+  pod 'ATLog/ForiPad', :path => '../'
+  pod 'ATLog/ForiWatch', :path => '../'
+
+  pod 'CocoaLumberjack', :git => 'git@github.com:igovee/CocoaLumberjack.git', :tag => '3.7.4'
+end
