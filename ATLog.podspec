@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ATLog'
-  s.version          = '0.1.0'
+  s.version          = '0.1.2'
   s.summary          = 'A short description of ATLog.'
 
 # This description is used to generate tags and improve search results.
@@ -21,20 +21,23 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/yebiaoli/ATLog'
+  s.homepage         = 'git@github.com:igovee/ATLog.git'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'yebiaoli' => 'yebiao.li@ihoment.com' }
-  s.source           = { :git => 'https://github.com/yebiaoli/ATLog.git', :tag => s.version.to_s }
+  s.source           = { :git => 'git@github.com:igovee/ATLog.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '13.0'
-  s.watchos.deployment_target = '7.0'
+  s.ios.deployment_target = '15.0'
+  s.watchos.deployment_target = '8.0'
+
+  s.swift_version = '5.0'
 
   s.default_subspecs = ['Core']
 
   s.subspec 'Core' do |ss|
     ss.source_files = 'ATLog/Classes/Core/**/*'
+    ss.dependency 'CocoaLumberjack'
     ss.dependency 'CocoaLumberjack/Swift'
   end
 
